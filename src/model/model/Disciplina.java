@@ -6,7 +6,7 @@ public class Disciplina {
     private int semestre;
     private double media;
     private Disciplina preRequisito;
-    private boolean aprovado;
+    private boolean aprovado = false;
 
     public Disciplina(String nome, String area, Disciplina pre){
         this.nome = nome;
@@ -14,4 +14,13 @@ public class Disciplina {
         this.preRequisito = pre;
     }
 
+    public void aprovar(){
+        this.aprovado = true;
+    }
+
+    public void setMedia(double media) {
+        this.media = media;
+       /* if (media >= 7.0)
+            aprovar();*/ //eu posso fazer isso num setter?
+    }
 }
