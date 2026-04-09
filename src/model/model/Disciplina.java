@@ -2,16 +2,19 @@ package model.model;
 
 public class Disciplina {
     private String nome;
-    private String area; //exatas, eletronica, programacao
+    private Area area; //exatas, eletronica, programacao
     private int semestre;
     private double media;
     private Disciplina preRequisito;
     private boolean aprovado = false;
+    private Professor professor;
 
-    public Disciplina(String nome, String area, Disciplina pre){
+    public Disciplina(String nome, Area area, int semestre, Disciplina preRequisito, Professor professor) {
         this.nome = nome;
         this.area = area;
-        this.preRequisito = pre;
+        this.semestre = semestre;
+        this.preRequisito = preRequisito;
+        this.professor = professor;
     }
 
     public void aprovar(){

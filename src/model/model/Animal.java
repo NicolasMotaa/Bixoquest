@@ -3,10 +3,10 @@ package model.model;
 import java.util.Random;
 
 public class Animal extends NPC{
-    private String especie;
+    private Especie especie;
     private boolean bravo = false;
 
-    public Animal(String nome, Local localizacao, String descricao, String especie) {
+    public Animal(String nome, Local localizacao, String descricao, Especie especie) {
         super(nome, localizacao, descricao);
         this.especie = especie;
     }
