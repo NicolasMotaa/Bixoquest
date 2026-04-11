@@ -1,26 +1,38 @@
 package model.model;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class Jogador {
-    private String nome;
+    private final String nome;
     private int energia;
     private int motivacao;
     private int saude;
     private int dinheiro;
-    private ArrayList<Disciplina> disciplinasAprovadas;
-    private ArrayList<Disciplina> disciplinasAtuais;
+    private List<Disciplina> disciplinasAprovadas;
+    private List<Disciplina> disciplinasAtuais;
+    private Map<Disciplina, Integer> conhecimentos;
+    private final int id; //no service vai chamar nextId do repositório
+    private Local localizacao; //definir local inicial
 
-    public Jogador(String nome, int energia, int motivacao, int saude, int dinheiro) {
+    public Jogador(String nome, int id, Local localizacao) {
         this.nome = nome;
-        this.energia = energia;
-        this.motivacao = motivacao;
-        this.saude = saude;
-        this.dinheiro = dinheiro;
+        this.energia = 100;
+        this.motivacao = 100;
+        this.saude = 100;
+        this.dinheiro = 100;
+        this.disciplinasAprovadas = new ArrayList<>();
+        this.disciplinasAtuais = new ArrayList<>();
+        this.conhecimentos = new HashMap<>();
+        this.id = id;
+        this.localizacao = localizacao;
     }
 
-    public void andar() {
-        //alterar x e y, a ver como isso vai funcionar
+
+    public int getId() {
+        return id;
     }
 
     public void alterarEnergia(int valor) {
@@ -36,6 +48,38 @@ public class Jogador {
     }
 
     public void alterarDinheiro(int valor) {
-        this.dinheiro = Math.max(0, Math.min(100, this.dinheiro + valor));
+        this.dinheiro = Math.max(0, this.dinheiro + valor);
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public int getEnergia() {
+        return energia;
+    }
+
+    public int getMotivacao() {
+        return motivacao;
+    }
+
+    public int getSaude() {
+        return saude;
+    }
+
+    public int getDinheiro() {
+        return dinheiro;
+    }
+
+    public List<Disciplina> getDisciplinasAprovadas() {
+        return disciplinasAprovadas;
+    }
+
+    public List<Disciplina> getDisciplinasAtuais() {
+        return disciplinasAtuais;
+    }
+
+    public Local getLocalizacao() {
+        return localizacao;
     }
 }
