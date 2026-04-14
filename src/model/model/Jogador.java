@@ -14,10 +14,10 @@ public class Jogador {
     private List<Disciplina> disciplinasAprovadas;
     private List<Disciplina> disciplinasAtuais;
     private Map<Disciplina, Integer> conhecimentos;
-    private final int id; //no service vai chamar nextId do repositório
     private Local localizacao; //definir local inicial
+    private boolean isPresenteNaAula = false;
 
-    public Jogador(String nome, int id, Local localizacao) {
+    public Jogador(String nome, Local localizacao) {
         this.nome = nome;
         this.energia = 100;
         this.motivacao = 100;
@@ -26,13 +26,11 @@ public class Jogador {
         this.disciplinasAprovadas = new ArrayList<>();
         this.disciplinasAtuais = new ArrayList<>();
         this.conhecimentos = new HashMap<>();
-        this.id = id;
         this.localizacao = localizacao;
     }
 
-
-    public int getId() {
-        return id;
+    public void alterarConhecimento(Disciplina disciplina,int valor){
+        this.conhecimentos.merge(disciplina, Math.max(100, valor+conhecimentos.get(disciplina)), (valorAntigo, valorNovo) -> valorAntigo + valorNovo);
     }
 
     public void alterarEnergia(int valor) {
@@ -79,7 +77,19 @@ public class Jogador {
         return disciplinasAtuais;
     }
 
+    public int getConhecimentoPorDisciplina(Disciplina disciplina){
+        return this.conhecimentos.get(disciplina);
+    }
+
     public Local getLocalizacao() {
         return localizacao;
+    }
+
+    public boolean isPresenteNaAula() {
+        return isPresenteNaAula;
+    }
+
+    public void setPresenteNaAula(boolean presenteNaAula) {
+        this.isPresenteNaAula = presenteNaAula;
     }
 }

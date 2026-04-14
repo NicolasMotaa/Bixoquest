@@ -6,9 +6,10 @@ public class Animal extends NPC{
     private Especie especie;
     private boolean bravo = false;
 
-    public Animal(String nome, Local localizacao, String descricao, Especie especie) {
-        super(nome, localizacao, descricao);
+    public Animal(String nome, String descricao, Local localizacao, Especie especie, boolean bravo) {
+        super(nome, descricao, localizacao);
         this.especie = especie;
+        this.bravo = bravo;
     }
 
     public void calcularHumor(){
