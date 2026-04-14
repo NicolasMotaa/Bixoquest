@@ -1,4 +1,7 @@
-package model.model;
+package model;
+
+import model.entidades.Area;
+import model.entidades.Professor;
 
 import java.util.Objects;
 

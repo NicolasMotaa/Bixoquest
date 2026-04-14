@@ -1,10 +1,10 @@
 package model.service;
 
-import model.model.*;
-import model.repository.DisciplinaRepository;
+import model.*;
+import model.entidades.Area;
+import model.locais.PracaDoBorogodo;
 import model.repository.JogoRepository;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class JogoService {
@@ -15,9 +15,9 @@ public class JogoService {
         this.disciplinaService = disciplinaService;
     }
 
-    public Jogo criarJogo(String nome){
+    public Jogo criarJogo(String nome, PracaDoBorogodo pracaDoBorogodo){
         //Local vai mudar porque se tornou abstrato
-        Jogador j = new Jogador(nome, new Local("Praça do borogodó", "onde voce fica de boa", new ArrayList<>()));
+        Jogador j = new Jogador(nome, pracaDoBorogodo);
         int id = repository.gerarId();
         return repository.salvar(new Jogo(j, id));
     }

@@ -1,6 +1,11 @@
-package model.model;
+package model.entidades;
 
-public class Colega extends NPC{
+import model.Constantes;
+import model.Disciplina;
+import model.Jogador;
+import model.locais.Local;
+
+public class Colega extends NPC {
     public Colega(String nome, String descricao, Local localizacao) {
         super(nome, descricao, localizacao);
     }

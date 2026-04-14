@@ -1,4 +1,6 @@
-package model.model;
+package model.entidades;
+
+import model.locais.Local;
 
 public abstract class NPC {
     private String nome;

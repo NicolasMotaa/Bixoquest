@@ -1,4 +1,4 @@
-package model.model;
+package model.entidades;
 
 public enum Especie {
     GATO, CACHORRO

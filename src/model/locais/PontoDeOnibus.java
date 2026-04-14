@@ -1,10 +1,14 @@
-package model.model;
+package model.locais;
+
+import model.Constantes;
+import model.Jogador;
+import model.entidades.NPC;
 
 import java.util.ArrayList;
 
-public class PontoDeOnibus extends Local{
-    public PontoDeOnibus(String nome, String descricao, ArrayList<NPC> npcs) {
-        super(nome, descricao, npcs);
+public class PontoDeOnibus extends Local {
+    public PontoDeOnibus(ArrayList<NPC> npcs) {
+        super("Ponto De Onibus", "Pegar o 003 pra ir pra casa", npcs);
     }
 
     @Override

@@ -1,12 +1,17 @@
-package model.model;
+package model.locais;
+
+import model.Constantes;
+import model.Disciplina;
+import model.Jogador;
+import model.entidades.NPC;
 
 import java.util.ArrayList;
 
-public class SalaDeAula extends Local{
+public class SalaDeAula extends Local {
 
 
-    public SalaDeAula(String nome, String descricao, ArrayList<NPC> npcs) {
-        super(nome, descricao, npcs);
+    public SalaDeAula(ArrayList<NPC> npcs) {
+        super("Sala de Aula", "PAT 57", npcs);
     }
 
     public void escolherInteracao(int num, Jogador jogador, Disciplina disciplina){

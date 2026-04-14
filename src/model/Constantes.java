@@ -1,4 +1,4 @@
-package model.model;
+package model;
 
 public class Constantes {
 
@@ -14,7 +14,7 @@ public class Constantes {
     public static final int BONUS_MOTIVACAO_JOGAR_COLEGA = 25;
     public static final int RECUPERACAO_ENERGIA_SONO = 40;
     public static final int RECUPERACAO_MOTIVACAO_SONO = 30;
-
+    public static final int BONUS_CAFEZINHO = 10;
 
 
 

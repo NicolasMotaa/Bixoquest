@@ -1,4 +1,6 @@
-package model.model;
+package model;
+
+import model.locais.Local;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -46,7 +48,7 @@ public class Jogador {
     }
 
     public void alterarDinheiro(int valor) {
-        this.dinheiro = Math.max(0, this.dinheiro + valor);
+        this.dinheiro = Math.max(0, Math.min(100, this.saude + valor));
     }
 
     public String getNome() {

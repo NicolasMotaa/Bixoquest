@@ -1,8 +1,11 @@
-package model.model;
+package model.entidades;
+
+import model.Jogador;
+import model.locais.Local;
 
 import java.util.Random;
 
-public class Animal extends NPC{
+public class Animal extends NPC {
     private Especie especie;
     private boolean bravo = false;
 

@@ -1,8 +1,8 @@
 package model.repository;
 
-import model.model.Area;
-import model.model.Disciplina;
-import model.model.Professor;
+import model.entidades.Area;
+import model.Disciplina;
+import model.entidades.Professor;
 
 import java.util.ArrayList;
 import java.util.List;

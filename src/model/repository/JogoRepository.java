@@ -1,7 +1,6 @@
 package model.repository;
 
-import model.model.Jogador;
-import model.model.Jogo;
+import model.Jogo;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
