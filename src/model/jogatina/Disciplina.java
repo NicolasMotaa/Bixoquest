@@ -48,6 +48,14 @@ public class Disciplina {
         return aprovado;
     }
 
+    public Disciplina getPreRequisito() {
+        return preRequisito;
+    }
+
+    public int getSemestre() {
+        return semestre;
+    }
+
     @Override
     public boolean equals(Object d){return (d instanceof Disciplina e) && e.nome.equals(nome);}
 
