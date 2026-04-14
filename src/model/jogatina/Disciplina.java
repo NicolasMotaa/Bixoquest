@@ -36,6 +36,10 @@ public class Disciplina {
         this.faltas++;
     }
 
+    public int getFaltas() {
+        return faltas;
+    }
+
     public Area getArea() {
         return area;
     }

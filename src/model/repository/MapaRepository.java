@@ -98,4 +98,40 @@ public class MapaRepository {
     public static SalaDeAula getSalaDeAula() {
         return salaDeAula;
     }
+
+    public static Maeli getMaeli() {
+        return maeli;
+    }
+
+    public static Professor getProfExatas() {
+        return profExatas;
+    }
+
+    public static Professor getProfEletronica() {
+        return profEletronica;
+    }
+
+    public static Professor getProfProgramacao() {
+        return profProgramacao;
+    }
+
+    public static Vendedor getVendedor() {
+        return vendedor;
+    }
+
+    public static Animal getCachorro() {
+        return cachorro;
+    }
+
+    public static Animal getGato() {
+        return gato;
+    }
+
+    public static Colega getColegaSala() {
+        return colegaSala;
+    }
+
+    public static Colega getColegaPraca() {
+        return colegaPraca;
+    }
 }

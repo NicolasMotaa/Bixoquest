@@ -20,4 +20,5 @@ public class Jogo {
     public Tempo getTempo() {
         return tempo;
     }
+
 }

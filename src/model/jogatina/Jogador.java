@@ -87,6 +87,10 @@ public class Jogador {
         return localizacao;
     }
 
+    public void setLocalizacao(Local localizacao) {
+        this.localizacao = localizacao;
+    }
+
     public boolean isPresenteNaAula() {
         return isPresenteNaAula;
     }
