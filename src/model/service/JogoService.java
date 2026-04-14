@@ -76,7 +76,7 @@ public class JogoService {
         }
 
         tempo.avancarSemestre();
-
+        jogador.alterarDinheiro(+100);
         if (tempo.getSemestreAtual() > 10)
             jubilar();
         else

@@ -25,7 +25,9 @@ public class JogadorService {
             throw new IllegalStateException("Esteja na cantina");
         if (jogador.getDinheiro() < 5)
             throw new IllegalStateException("Tá tudo dorme. Saldo insuficiente");
+        SemTroco evento = new SemTroco();
         vendedor.vender(jogador);
+        evento.acontecer(jogador);
     }
 
 
@@ -39,6 +41,8 @@ public class JogadorService {
         if (tempo.getAcoesDisponiveis() < 1)
             throw new IllegalStateException("Você não pode estudar tão tarde!");
         if ((semana == 4) && (dia == 4 || dia == 5)) {
+            MilagreAcademico milagreAcademico = new MilagreAcademico();
+            milagreAcademico.acontecer(disciplina, jogador);
             sala.escolherInteracao(1, jogador, disciplina);
         } else {
             if (jogador.getEnergia() < Constantes.CUSTO_ENERGIA_ESTUDAR)
@@ -54,6 +58,8 @@ public class JogadorService {
     public void pegarOnibus(Jogo jogo, PontoDeOnibus ponto) {
         Jogador jogador = jogo.getJogador();
         ponto.interagir(jogador);
+        NoiteMalDormida evento = new NoiteMalDormida();
+        evento.acontecer(jogador);
         //Controller deve chamar JogoService avancarDia()
     }
 

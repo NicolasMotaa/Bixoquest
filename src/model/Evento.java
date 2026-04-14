@@ -1,18 +1,24 @@
 package model;
 
-import java.util.Map;
+import java.util.Random;
 
 public abstract class Evento {
     private String nome;
     private String descricao;
-    private int probabilidade;
-    private Map<String, Integer> alteracoes;
-
-    public Evento(String nome, String descricao, int probabilidade, Map<String, Integer> alteracoes) {
+    private double probabilidade;
+    private boolean isAplicado;
+    public Evento(String nome, String descricao, double probabilidade) {
         this.nome = nome;
         this.descricao = descricao;
         this.probabilidade = probabilidade;
-        this.alteracoes = alteracoes;
     }
 
+    public void calcularSeOcorre(){
+        Random random = new Random();
+        this.isAplicado = random.nextDouble() < this.probabilidade;
+    }
+
+    public boolean isAplicado() {
+        return isAplicado;
+    }
 }
