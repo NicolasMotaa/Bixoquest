@@ -31,8 +31,10 @@ public class Jogador {
         this.localizacao = localizacao;
     }
 
-    public void alterarConhecimento(Disciplina disciplina,int valor){
-        this.conhecimentos.merge(disciplina, Math.max(100, valor+conhecimentos.get(disciplina)), (valorAntigo, valorNovo) -> valorAntigo + valorNovo);
+    public void alterarConhecimento(Disciplina disciplina, int valor) {
+        this.conhecimentos.merge(disciplina, valor, (valorAntigo, valorNovo) ->
+                Math.min(100, valorAntigo + valorNovo)
+        );
     }
 
     public void alterarEnergia(int valor) {
