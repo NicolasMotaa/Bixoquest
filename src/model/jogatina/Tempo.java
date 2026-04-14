@@ -1,4 +1,4 @@
-package model;
+package model.jogatina;
 
 public class Tempo {
     private int semestreAtual = 1;

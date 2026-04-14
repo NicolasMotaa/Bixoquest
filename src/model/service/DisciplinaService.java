@@ -1,7 +1,7 @@
 package model.service;
 
 import model.entidades.Area;
-import model.Jogador;
+import model.jogatina.Jogador;
 import model.repository.DisciplinaRepository;
 
 

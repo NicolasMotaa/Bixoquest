@@ -1,7 +1,7 @@
 package model.locais;
 
-import model.Constantes;
-import model.Jogador;
+import model.jogatina.Constantes;
+import model.jogatina.Jogador;
 import model.entidades.NPC;
 
 import java.util.ArrayList;

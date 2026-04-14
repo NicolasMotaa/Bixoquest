@@ -1,8 +1,8 @@
 package model.entidades;
 
-import model.Constantes;
-import model.Disciplina;
-import model.Jogador;
+import model.jogatina.Constantes;
+import model.jogatina.Disciplina;
+import model.jogatina.Jogador;
 import model.locais.Local;
 
 public class Colega extends NPC {

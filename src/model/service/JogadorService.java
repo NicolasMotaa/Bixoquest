@@ -1,10 +1,10 @@
 package model.service;
 
-import model.*;
 import model.entidades.Animal;
 import model.entidades.Colega;
 import model.entidades.Maeli;
 import model.entidades.Vendedor;
+import model.jogatina.*;
 import model.locais.*;
 
 

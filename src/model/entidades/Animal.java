@@ -1,6 +1,6 @@
 package model.entidades;
 
-import model.Jogador;
+import model.jogatina.Jogador;
 import model.locais.Local;
 
 import java.util.Random;

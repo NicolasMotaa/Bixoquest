@@ -1,7 +1,7 @@
 package model.entidades;
 
-import model.Constantes;
-import model.Jogador;
+import model.jogatina.Constantes;
+import model.jogatina.Jogador;
 import model.locais.Cantina;
 
 

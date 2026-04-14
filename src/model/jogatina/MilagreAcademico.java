@@ -1,4 +1,4 @@
-package model;
+package model.jogatina;
 
 public class MilagreAcademico extends Evento{
     public MilagreAcademico() {

@@ -1,4 +1,4 @@
-package model;
+package model.jogatina;
 
 import model.entidades.Area;
 import model.entidades.Professor;

@@ -1,4 +1,4 @@
-package model;
+package model.jogatina;
 
 import java.util.Random;
 

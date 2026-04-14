@@ -1,6 +1,6 @@
 package model.repository;
 
-import model.Jogo;
+import model.jogatina.Jogo;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;

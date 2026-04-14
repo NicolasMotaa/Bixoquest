@@ -1,4 +1,4 @@
-package model;
+package model.jogatina;
 
 public class SemTroco extends Evento{
     public SemTroco() {

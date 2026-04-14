@@ -1,4 +1,4 @@
-package model;
+package model.jogatina;
 
 import model.locais.Local;
 

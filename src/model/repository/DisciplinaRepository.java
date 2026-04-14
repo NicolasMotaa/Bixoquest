@@ -1,7 +1,7 @@
 package model.repository;
 
 import model.entidades.Area;
-import model.Disciplina;
+import model.jogatina.Disciplina;
 import model.entidades.Professor;
 
 import java.util.ArrayList;

@@ -1,7 +1,10 @@
 package model.service;
 
-import model.*;
 import model.entidades.Area;
+import model.jogatina.Disciplina;
+import model.jogatina.Jogador;
+import model.jogatina.Jogo;
+import model.jogatina.Tempo;
 import model.locais.PracaDoBorogodo;
 import model.repository.JogoRepository;
 
