@@ -7,12 +7,11 @@ import java.util.Random;
 
 public class Animal extends NPC {
     private Especie especie;
-    private boolean bravo = false;
+    private boolean bravo;
 
-    public Animal(String nome, String descricao, Local localizacao, Especie especie, boolean bravo) {
+    public Animal(String nome, String descricao, Local localizacao, Especie especie) {
         super(nome, descricao, localizacao);
         this.especie = especie;
-        this.bravo = bravo;
     }
 
     public void calcularHumor(){
