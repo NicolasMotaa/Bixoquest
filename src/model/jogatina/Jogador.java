@@ -53,10 +53,6 @@ public class Jogador {
         this.dinheiro = Math.max(0, Math.min(100, this.saude + valor));
     }
 
-    public String getNome() {
-        return nome;
-    }
-
     public int getEnergia() {
         return energia;
     }

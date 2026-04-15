@@ -28,10 +28,6 @@ public class Tempo {
         return diaDaSemana;
     }
 
-    public void setDiaDaSemana(int diaDaSemana) {
-        this.diaDaSemana = diaDaSemana;
-    }
-
     public void consumirAcoes() {
         this.acoesDisponiveis -= 1;
     }
@@ -41,23 +37,12 @@ public class Tempo {
         return semestreAtual;
     }
 
-    public void setSemestreAtual(int semestreAtual) {
-        this.semestreAtual = semestreAtual;
-    }
-
     public int getSemanaAtual() {
         return semanaAtual;
-    }
-
-    public void setSemanaAtual(int semanaAtual) {
-        this.semanaAtual = semanaAtual;
     }
 
     public int getAcoesDisponiveis() {
         return acoesDisponiveis;
     }
 
-    public void setAcoesDisponiveis(int acoesDisponiveis) {
-        this.acoesDisponiveis = acoesDisponiveis;
-    }
 }

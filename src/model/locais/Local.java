@@ -6,10 +6,7 @@ import model.entidades.NPC;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * biblioteca, lab, sala de aula, ponto de onibus: subclasses com comportamentos proprios
- * cantina, colegiado, praça: instancias diretas, com npcs que assumem os comportamentos
- */
+
 public abstract class Local {
     private String nome;
     private String descricao;
