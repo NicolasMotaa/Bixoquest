@@ -21,4 +21,12 @@ public abstract class Evento {
     public boolean isAplicado() {
         return isAplicado;
     }
+
+    @Override
+    public String toString() {
+        return "Evento{" +
+                "nome='" + nome + '\'' +
+                ", descricao='" + descricao + '\'' +
+                '}';
+    }
 }

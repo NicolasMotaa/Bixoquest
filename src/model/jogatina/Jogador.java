@@ -2,12 +2,13 @@ package model.jogatina;
 
 import model.locais.Local;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Jogador {
+public class Jogador implements Serializable {
     private final String nome;
     private int energia;
     private int motivacao;

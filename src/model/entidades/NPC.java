@@ -13,11 +13,7 @@ public abstract class NPC {
         this.localizacao = localizacao;
     }
 
-    public String interagir(String frase){
-        return frase;
-        //chamar biblioteca ou repositório com frases para interação simples
-    }
-
+    public abstract void interagir();
 
     public String getNome() {
         return nome;

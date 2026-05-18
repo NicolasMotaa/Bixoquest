@@ -1,11 +1,13 @@
 package model.jogatina;
 
-public class Tempo {
+import java.io.Serializable;
+
+public class Tempo implements Serializable {
     private int semestreAtual = 1;
     private int semanaAtual = 1;
     private int acoesDisponiveis = 3;
     private int diaDaSemana = 1;
-    //8 semestres de 4 semanas de 5 dias. Por enquanto 3 ações por dia
+    //5 semestres de 4 semanas de 5 dias. Por enquanto 3 ações por dia
 
     public void avancarDia() {
         this.diaDaSemana += 1;
@@ -23,13 +25,12 @@ public class Tempo {
         this.diaDaSemana = 1;
         this. acoesDisponiveis = 3;
     }
+    public void consumirAcoes() {
+        this.acoesDisponiveis -= 1;
+    }
 
     public int getDiaDaSemana() {
         return diaDaSemana;
-    }
-
-    public void consumirAcoes() {
-        this.acoesDisponiveis -= 1;
     }
 
     // atualizar setters com as lógicas dos limites definidos

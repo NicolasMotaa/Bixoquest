@@ -8,6 +8,7 @@ import model.jogatina.Tempo;
 import model.locais.PracaDoBorogodo;
 import model.repository.JogoRepository;
 
+import java.nio.file.Path;
 import java.util.List;
 
 public class JogoService {
@@ -93,6 +94,13 @@ public class JogoService {
         // a implementar
     }
     public List<Jogo> listarJogos(){return repository.listarJogos();}
+
+    void criarJSONJogo (){
+        repository.createJSONJogos();
+    }
+    public void carregarJogos(){
+        repository.readJSONJogos(Path.of("jogos.json"));
+    }
 
     public Jogo atualizarJogo(Jogo jogo){
         return repository.salvar(jogo);
