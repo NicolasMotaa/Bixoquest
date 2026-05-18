@@ -8,6 +8,7 @@ import model.jogatina.Tempo;
 import model.locais.PracaDoBorogodo;
 import model.repository.JogoRepository;
 
+import java.io.IOException;
 import java.nio.file.Path;
 import java.util.List;
 
@@ -95,11 +96,12 @@ public class JogoService {
     }
     public List<Jogo> listarJogos(){return repository.listarJogos();}
 
-    void criarJSONJogo (){
-        repository.createJSONJogos();
+    void salvarJogo (Jogo jogo) throws Exception {
+            atualizarJogo(jogo);
+            repository.save(jogo);
     }
-    public void carregarJogos(){
-        repository.readJSONJogos(Path.of("jogos.json"));
+    public void carregarJogos() throws IOException, ClassNotFoundException {
+        repository.load();
     }
 
     public Jogo atualizarJogo(Jogo jogo){

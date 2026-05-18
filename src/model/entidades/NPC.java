@@ -13,7 +13,7 @@ public abstract class NPC {
         this.localizacao = localizacao;
     }
 
-    public abstract void interagir();
+    // public abstract void interagir();
 
     public String getNome() {
         return nome;
