@@ -6,15 +6,17 @@ import model.entidades.Maeli;
 import model.entidades.Vendedor;
 import model.jogatina.*;
 import model.locais.*;
+import model.repository.MapaRepository;
 
 
 public class JogadorService {
+    private final MapaRepository mapaRepository = new MapaRepository();
     public JogadorService() {
     }
 
     public void interagirMaeli(Jogo jogo, Colegiado colegiado, Maeli maeli) {
         Jogador jogador = jogo.getJogador();
-        if (jogador.getLocalizacao() != colegiado)
+        if (jogador.getLocalizacao() != (mapaRepository.getColegiado()))
             throw new IllegalStateException("Esteja junto com Maelinda");
         maeli.ajudar();
     }
@@ -55,9 +57,9 @@ public class JogadorService {
         }
     }
 
-    public void pegarOnibus(Jogo jogo, PontoDeOnibus ponto) {
+    public void pegarOnibus(Jogo jogo) {
         Jogador jogador = jogo.getJogador();
-        ponto.interagir(jogador);
+        MapaRepository.getPontoDeOnibus().interagir(jogador);
         NoiteMalDormida evento = new NoiteMalDormida();
         evento.acontecer(jogador);
         //Controller deve chamar JogoService avancarDia()

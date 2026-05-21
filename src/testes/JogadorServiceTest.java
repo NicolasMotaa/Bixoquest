@@ -22,25 +22,27 @@ class JogadorServiceTest {
     private JogadorService jogadorService;
     private JogoService jogoService;
     private DisciplinaService disciplinaService;
+    private MapaRepository mapaRepository;
     private Jogo jogo;
 
+
     @BeforeAll
-    public static void inicializarRepositorios() {
+    public static void inicializarRepositorios() { //revisar isso aqui
         MapaRepository.inicializar();
         Professor profEx = new Professor("Gegê", "Prof exatas", MapaRepository.getSalaDeAula(), Area.EXATAS);
         Professor profProg = new Professor("Ana Cláudia", "Prof prog", MapaRepository.getSalaDeAula(), Area.PROGRAMACAO);
         Professor profElet = new Professor("Jonas", "Prof elet", MapaRepository.getSalaDeAula(), Area.ELETRONICA);
-        DisciplinaRepository.inicializar(profEx, profProg, profElet);
+        DisciplinaRepository.inicializar(MapaRepository.getProfExatas(), profProg, profElet);
     }
 
     @BeforeEach
     void prepararJogo() {
         JogoRepository jogoRepository = new JogoRepository();
         disciplinaService = new DisciplinaService(new DisciplinaRepository());
-        jogoService = new JogoService(jogoRepository, disciplinaService);
+        jogoService = new JogoService(jogoRepository);
         jogadorService = new JogadorService();
         PracaDoBorogodo pracaDoBorogodo = MapaRepository.getPracaDoBorogodo();
-        jogo = jogoService.criarJogo("Nicolas", pracaDoBorogodo);
+        jogo = jogoService.criarJogo("Nicolas");
         disciplinaService.matricular(jogo.getJogador());
     }
 

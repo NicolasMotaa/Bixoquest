@@ -18,7 +18,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class JogoRepository {
     private Map<Integer, Jogo> bancoDeJogos;
-    private final AtomicInteger id = new AtomicInteger(0);
+    private final AtomicInteger id = new AtomicInteger(1); //coloquei 1 pra funcionar no controller provisório
     private final Path path = Path.of("saves.bin");
 
     public JogoRepository(){

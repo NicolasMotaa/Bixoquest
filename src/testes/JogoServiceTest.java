@@ -35,10 +35,10 @@ import static org.junit.jupiter.api.Assertions.*;
         void prepararJogo() {
             JogoRepository jogoRepository = new JogoRepository();
             disciplinaService = new DisciplinaService(new DisciplinaRepository());
-            jogoService = new JogoService(jogoRepository, disciplinaService);
+            jogoService = new JogoService(jogoRepository);
             PracaDoBorogodo pracaDoBorogodo = MapaRepository.getPracaDoBorogodo();
-            jogo = jogoService.criarJogo("Nicolas", pracaDoBorogodo);
-            disciplinaService.matricular(jogo.getJogador());
+            jogo = jogoService.criarJogo("Nicolas");
+            DisciplinaService.matricular(jogo.getJogador());
         }
 
         @Test

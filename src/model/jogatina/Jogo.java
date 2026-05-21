@@ -40,7 +40,6 @@ public class Jogo implements Serializable {
     @Override
     public String toString() {
         return "Jogo{" +
-                "j=" + j +
                 ", tempo=" + tempo +
                 ", id=" + id +
                 '}';

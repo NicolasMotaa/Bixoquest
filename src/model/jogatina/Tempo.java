@@ -46,4 +46,14 @@ public class Tempo implements Serializable {
         return acoesDisponiveis;
     }
 
+    @Override
+    public String toString() {
+        return "Tempo{" +
+                "diaDaSemana=" + diaDaSemana +
+                ", semanaAtual=" + semanaAtual +
+                ", semestreAtual=" + semestreAtual +
+                ", acoesDisponiveis=" + acoesDisponiveis +
+
+                '}';
+    }
 }

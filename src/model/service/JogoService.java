@@ -5,26 +5,24 @@ import model.jogatina.Disciplina;
 import model.jogatina.Jogador;
 import model.jogatina.Jogo;
 import model.jogatina.Tempo;
-import model.locais.PracaDoBorogodo;
 import model.repository.JogoRepository;
-
+import model.repository.MapaRepository;
 import java.io.IOException;
-import java.nio.file.Path;
 import java.util.List;
 
 public class JogoService {
-    private final JogoRepository repository;
-    private DisciplinaService disciplinaService;
-    public JogoService(JogoRepository repository, DisciplinaService disciplinaService){
-        this.repository = repository;
-        this.disciplinaService = disciplinaService;
+    private final JogoRepository jogoRepository;
+
+    public JogoService(JogoRepository jogoRepository){
+        this.jogoRepository = jogoRepository;
+
     }
 
-    public Jogo criarJogo(String nome, PracaDoBorogodo pracaDoBorogodo){
-        //Local vai mudar porque se tornou abstrato
-        Jogador j = new Jogador(nome, pracaDoBorogodo);
-        int id = repository.gerarId();
-        return repository.salvar(new Jogo(j, id));
+    public Jogo criarJogo(String nome){
+        // É esse local mesmo?
+        Jogador j = new Jogador(nome, MapaRepository.getPracaDoBorogodo());
+        int id = jogoRepository.gerarId();
+        return jogoRepository.salvar(new Jogo(j, id));
     }
 
     private Area getAreaDoDia(int dia) {
@@ -85,7 +83,7 @@ public class JogoService {
         if (tempo.getSemestreAtual() > 10)
             jubilar();
         else
-            this.disciplinaService.matricular(jogador);
+            DisciplinaService.matricular(jogador);
     }
     public void jubilar(){
         //implementar logica de game over
@@ -94,21 +92,24 @@ public class JogoService {
     public void formar(){
         // a implementar
     }
-    public List<Jogo> listarJogos(){return repository.listarJogos();}
+    public List<Jogo> listarJogos(){return jogoRepository.listarJogos();}
 
-    void salvarJogo (Jogo jogo) throws Exception {
+    public void salvarJogo (Jogo jogo) throws Exception {
             atualizarJogo(jogo);
-            repository.save(jogo);
+            jogoRepository.save(jogo);
     }
     public void carregarJogos() throws IOException, ClassNotFoundException {
-        repository.load();
+        jogoRepository.load();
     }
 
+    public Jogo buscarJogo(Integer id){
+        return jogoRepository.buscarJogo(id);
+    }
     public Jogo atualizarJogo(Jogo jogo){
-        return repository.salvar(jogo);
+        return jogoRepository.salvar(jogo);
     }
 
     public boolean deletarJogo(int id){
-        return repository.deletarJogo(id);
+        return jogoRepository.deletarJogo(id);
     }
 }
