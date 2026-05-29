@@ -11,8 +11,7 @@ import model.repository.MapaRepository;
 
 public class JogadorService {
     private final MapaRepository mapaRepository = new MapaRepository();
-    public JogadorService() {
-    }
+
 
     public void interagirMaeli(Jogo jogo, Colegiado colegiado, Maeli maeli) {
         Jogador jogador = jogo.getJogador();

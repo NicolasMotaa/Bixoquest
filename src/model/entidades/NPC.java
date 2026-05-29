@@ -2,7 +2,9 @@ package model.entidades;
 
 import model.locais.Local;
 
-public abstract class NPC {
+import java.io.Serializable;
+
+public abstract class NPC implements Serializable {
     private String nome;
     private String descricao;
     private Local localizacao;

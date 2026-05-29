@@ -14,7 +14,7 @@ public class DisciplinaService {
     }
 
 
-    private static void matricularPorArea(Jogador jogador, Area area) {
+    private void matricularPorArea(Jogador jogador, Area area) {
         disciplinaRepository.buscarPorArea(area)
                 .stream()
                 .filter(d -> d != null && !jogador.getDisciplinasAprovadas().contains(d))
@@ -23,7 +23,7 @@ public class DisciplinaService {
 
     }
 
-    public static void matricular(Jogador jogador) {
+    public void matricular(Jogador jogador) {
         matricularPorArea(jogador, Area.EXATAS);
         matricularPorArea(jogador, Area.PROGRAMACAO);
         matricularPorArea(jogador, Area.ELETRONICA);

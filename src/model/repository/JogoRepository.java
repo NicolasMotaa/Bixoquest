@@ -2,6 +2,7 @@ package model.repository;
 
 import model.jogatina.Jogo;
 
+import java.io.File;
 import java.io.IOException;
 
 import java.io.ObjectOutputStream;
@@ -18,27 +19,29 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class JogoRepository {
     private Map<Integer, Jogo> bancoDeJogos;
-    private final AtomicInteger id = new AtomicInteger(1); //coloquei 1 pra funcionar no controller provisório
+    private final AtomicInteger id = new AtomicInteger(0); //o primeiro será 1, devido ao incremente, vide testes
     private final Path path = Path.of("saves.bin");
 
     public JogoRepository(){
         try{
             this.bancoDeJogos = load();
         }
-        catch (IOException | ClassNotFoundException e){
+        catch (Exception e){
             this.bancoDeJogos = new LinkedHashMap<>();
         }
     }
-    public void save (Jogo jogo) throws Exception {
+    public void save () throws Exception {
 
         try(ObjectOutputStream out = new ObjectOutputStream(Files.newOutputStream(path))){
             out.writeObject(bancoDeJogos);
         }
     }
     @SuppressWarnings("unchecked")
-    public Map<Integer, Jogo> load() throws IOException, ClassNotFoundException{
+    public Map<Integer, Jogo> load() throws Exception {
         if(!Files.exists(path)){
-            return new LinkedHashMap<>();
+            Files.createFile(path);
+            save();
+            return bancoDeJogos = new LinkedHashMap<>();
         }
         try (ObjectInputStream in = new ObjectInputStream(Files.newInputStream(path))){
 
@@ -64,6 +67,7 @@ public class JogoRepository {
         return (bancoDeJogos.remove(id)) != null;
     }
 
-
-
+    public Map<Integer, Jogo> getBancoDeJogos() {
+        return bancoDeJogos;
+    }
 }

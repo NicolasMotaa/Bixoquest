@@ -46,6 +46,22 @@ public class Tempo implements Serializable {
         return acoesDisponiveis;
     }
 
+    public void setSemestreAtual(int semestreAtual) {
+        this.semestreAtual = semestreAtual;
+    }
+
+    public void setSemanaAtual(int semanaAtual) {
+        this.semanaAtual = semanaAtual;
+    }
+
+    public void setAcoesDisponiveis(int acoesDisponiveis) {
+        this.acoesDisponiveis = acoesDisponiveis;
+    }
+
+    public void setDiaDaSemana(int diaDaSemana) {
+        this.diaDaSemana = diaDaSemana;
+    }
+
     @Override
     public String toString() {
         return "Tempo{" +

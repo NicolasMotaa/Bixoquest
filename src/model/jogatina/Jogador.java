@@ -17,7 +17,7 @@ public class Jogador implements Serializable {
     private List<Disciplina> disciplinasAprovadas;
     private List<Disciplina> disciplinasAtuais;
     private Map<Disciplina, Integer> conhecimentos;
-    private Local localizacao; //definir local inicial
+    private  Local localizacao; //definir local inicial
     private boolean isPresenteNaAula = false;
 
     public Jogador(String nome, Local localizacao) {

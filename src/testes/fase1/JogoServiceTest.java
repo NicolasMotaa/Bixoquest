@@ -1,4 +1,4 @@
-package testes;
+package testes.fase1;
 
 import model.entidades.Area;
 import model.entidades.Professor;
@@ -28,17 +28,19 @@ import static org.junit.jupiter.api.Assertions.*;
             Professor profEx = new Professor("Gegê", "Prof exatas", MapaRepository.getSalaDeAula(), Area.EXATAS);
             Professor profProg = new Professor("Ana Cláudia", "Prof prog", MapaRepository.getSalaDeAula(), Area.PROGRAMACAO);
             Professor profElet = new Professor("Jonas", "Prof elet", MapaRepository.getSalaDeAula(), Area.ELETRONICA);
-            DisciplinaRepository.inicializar(profEx, profProg, profElet);
+            DisciplinaRepository.inicializar( MapaRepository.getProfExatas(), profProg, profElet);
+            //depois eu revejo essa inicialização dos professores, assim ta estranho,
+            // acho que deveria usar o get do mapa ao inves de criar tudo manualmente
+
         }
 
         @BeforeEach
         void prepararJogo() {
             JogoRepository jogoRepository = new JogoRepository();
             disciplinaService = new DisciplinaService(new DisciplinaRepository());
-            jogoService = new JogoService(jogoRepository);
-            PracaDoBorogodo pracaDoBorogodo = MapaRepository.getPracaDoBorogodo();
+            jogoService = new JogoService(jogoRepository, disciplinaService);
             jogo = jogoService.criarJogo("Nicolas");
-            DisciplinaService.matricular(jogo.getJogador());
+            disciplinaService.matricular(jogo.getJogador());
         }
 
         @Test

@@ -12,10 +12,10 @@ import java.util.List;
 
 public class JogoService {
     private final JogoRepository jogoRepository;
-
-    public JogoService(JogoRepository jogoRepository){
+    private DisciplinaService disciplinaService;
+    public JogoService(JogoRepository jogoRepository, DisciplinaService disciplinaService){
         this.jogoRepository = jogoRepository;
-
+        this.disciplinaService = disciplinaService;
     }
 
     public Jogo criarJogo(String nome){
@@ -83,7 +83,7 @@ public class JogoService {
         if (tempo.getSemestreAtual() > 10)
             jubilar();
         else
-            DisciplinaService.matricular(jogador);
+            disciplinaService.matricular(jogador);
     }
     public void jubilar(){
         //implementar logica de game over
@@ -96,9 +96,9 @@ public class JogoService {
 
     public void salvarJogo (Jogo jogo) throws Exception {
             atualizarJogo(jogo);
-            jogoRepository.save(jogo);
+            jogoRepository.save();
     }
-    public void carregarJogos() throws IOException, ClassNotFoundException {
+    public void carregarJogos() throws Exception {
         jogoRepository.load();
     }
 

@@ -3,10 +3,11 @@ package model.repository;
 import model.entidades.*;
 import model.locais.*;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MapaRepository {
+public class MapaRepository implements Serializable {
 
     private static Biblioteca biblioteca;
     private static Cantina cantina;
@@ -44,7 +45,7 @@ public class MapaRepository {
         maeli = new Maeli(colegiado);
         profExatas = new Professor("Gegê","Professor de exatas, certinho?", salaDeAula, Area.EXATAS);
         profEletronica = new Professor("Jonas", "Doscente do DTEC, não trema.", salaDeAula, Area.ELETRONICA);
-        profProgramacao = new Professor("Ana Cláudia", "Uma mãe. Ensina a programar", salaDeAula, Area.PROGRAMACAO);
+        profProgramacao = new Professor("Claúdia Lucia", "Uma mãe. Ensina a programar", salaDeAula, Area.PROGRAMACAO);
         vendedor = new Vendedor(cantina);
         cachorro = new Animal("Scooby","Cachorro gordinho", pracaDoBorogodo, Especie.CACHORRO);
         gato = new Animal("Florência", "Gatinha manhosa", salaDeAula,Especie.GATO);

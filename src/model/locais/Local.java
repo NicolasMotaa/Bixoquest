@@ -3,11 +3,12 @@ package model.locais;
 import model.jogatina.Jogador;
 import model.entidades.NPC;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 
-public abstract class Local {
+public abstract class Local implements Serializable {
     private String nome;
     private String descricao;
     private List<NPC> npcs;

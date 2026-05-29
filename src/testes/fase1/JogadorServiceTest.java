@@ -1,4 +1,4 @@
-package testes;
+package testes.fase1;
 
 import model.entidades.Animal;
 import model.entidades.Area;
@@ -39,7 +39,7 @@ class JogadorServiceTest {
     void prepararJogo() {
         JogoRepository jogoRepository = new JogoRepository();
         disciplinaService = new DisciplinaService(new DisciplinaRepository());
-        jogoService = new JogoService(jogoRepository);
+        jogoService = new JogoService(jogoRepository,  disciplinaService);
         jogadorService = new JogadorService();
         PracaDoBorogodo pracaDoBorogodo = MapaRepository.getPracaDoBorogodo();
         jogo = jogoService.criarJogo("Nicolas");

@@ -1,4 +1,4 @@
-package testes;
+package testes.fase1;
 
 import model.entidades.Area;
 import model.entidades.Professor;

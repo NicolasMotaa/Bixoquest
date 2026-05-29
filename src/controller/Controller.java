@@ -24,7 +24,7 @@ public class Controller {
     private final JogoService jogoService;
     private boolean isRunning = true;
     private Jogo jogoAtual;
-    private Scanner sc = new Scanner(System.in); //completamente provisório, isso é função da view
+    private final Scanner sc = new Scanner(System.in); //completamente provisório, isso é função da view
 
     public Controller(DisciplinaService disciplinaService, JogadorService jogadorService, JogoService jogoService) {
         this.disciplinaService = disciplinaService;
@@ -34,30 +34,34 @@ public class Controller {
     }
 
     public void loop() throws Exception {
-        escolherJogo();
+        int id = lerInt();
+        escolherJogo(id, id == 0 ? lerString() : null);
         while (isRunning) {
-            System.out.println("Digite para:" +
-                    "1- avançar dia (pegar onibus)" +
-                    "2- salvar jogo" +
-                    "3- escolher jogo" +
-                    "4- salvar e fechar");
-            switch (sc.nextInt()) {
+            switch (lerInt()) {
                 case 1 -> voltarParaCasa();
                 case 2 -> salvarJogo();
-                case 3 -> escolherJogo();
+                case 3 -> escolherJogo(lerInt(), null);
                 case 4 -> fechar();
                 default -> System.out.println("opção inválida");
             }
         }
     }
 
-    private void salvarJogo() throws Exception {
-        jogoService.salvarJogo(jogoAtual);
+    public Jogo criarNovoJogo(String nome) throws Exception {
+        Jogo novo = jogoService.criarJogo(nome);
+        setJogoAtual(novo);
+        salvarJogo();
+        return novo;
     }
 
-    private void carregarJogos() throws IOException, ClassNotFoundException {
-        jogoService.carregarJogos();
-
+    public void escolherJogo(int id, String nomeSeNovo) throws Exception {
+        if (jogoAtual != null) salvarJogo();
+        carregarJogos();
+        if (id == 0) {
+            criarNovoJogo(nomeSeNovo);
+        } else {
+            setJogoAtual(jogoService.buscarJogo(id));
+        }
     }
 
     public void voltarParaCasa() throws Exception {
@@ -66,40 +70,32 @@ public class Controller {
         salvarJogo();
     }
 
-    public void escolherJogo() throws Exception {
-        carregarJogos();
-        List<Jogo> lista = jogoService.listarJogos();
-        for (Jogo jogo : lista) {
-            System.out.println(jogo.toString());
-        }
-        System.out.println("Digite o ID do jogo desejado ou 0 para criar novo jogo.");
-
-        int valor = sc.nextInt();
-        if (valor == 0) {
-            setJogoAtual(criarNovoJogo());
-        } else
-            setJogoAtual(jogoService.buscarJogo(valor));
-        salvarJogo();
-    }
-
-    private Jogo criarNovoJogo() {
-        System.out.println("Qual o nome do seu personagem?");
-        String nome = sc.nextLine();
-        return jogoService.criarJogo(nome);
-    }
-
     public void fechar() throws Exception {
         salvarJogo();
         setRunning(false);
     }
 
-    private void setJogoAtual(Jogo jogoAtual) {
-        this.jogoAtual = jogoAtual;
+    public List<Jogo> listarJogos() {
+        return jogoService.listarJogos();
     }
 
-    private void setRunning(boolean isRunning) {
-        this.isRunning = isRunning;
+    public void salvarJogo() throws Exception {
+        jogoService.salvarJogo(jogoAtual);
     }
+
+    public void carregarJogos() throws Exception {
+        jogoService.carregarJogos();
+    }
+
+    private int lerInt() { return sc.nextInt(); }
+    private String lerString() { return sc.next(); }
+
+    // getters e setters
+    public Jogo getJogoAtual() { return jogoAtual; }
+    public void setJogoAtual(Jogo jogoAtual) { this.jogoAtual = jogoAtual; }
+    public void setRunning(boolean running) { isRunning = running; }
+    public boolean isRunning() { return isRunning; }
+
 
 
 }
