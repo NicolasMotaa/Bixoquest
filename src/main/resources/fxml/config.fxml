@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="768.0" style="-fx-background-color: black;" stylesheets="@../styles/app.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.viewcontrollers.ConfigController">
+
+    <children>
+
+        <!-- Fundo -->
+        <ImageView fitHeight="359.0" fitWidth="722.0" layoutX="23.0" layoutY="109.0" pickOnBounds="true" AnchorPane.bottomAnchor="108.0" AnchorPane.leftAnchor="23.0" AnchorPane.rightAnchor="23.0" AnchorPane.topAnchor="108.0">
+
+            <image>
+                <Image url="@../bgimages/bg-config.png" />
+            </image>
+
+        </ImageView>
+
+        <!-- HUD -->
+        <fx:include layoutX="284.0" layoutY="417.0" source="HUD.fxml" />
+
+        <!-- Menu -->
+        <VBox alignment="CENTER" layoutX="209.0" layoutY="160.0" prefWidth="350.0" spacing="18.0">
+
+            <children>
+
+                <Label fx:id="lblTitulo" styleClass="save-label" text="Menu de Pausa" />
+
+                <Button fx:id="btnSalvarJogo" mnemonicParsing="false" prefHeight="45.0" prefWidth="230.0" styleClass="botao-pixel-menu" text="Salvar Jogo" />
+
+                <Button fx:id="btnSelecionarSaves" mnemonicParsing="false" prefHeight="45.0" prefWidth="230.0" styleClass="botao-pixel-menu" text="Seleção de Saves" />
+
+                <Button fx:id="btnFecharJogo" mnemonicParsing="false" prefHeight="45.0" prefWidth="230.0" styleClass="botao-pixel-menu" text="Fechar Jogo" />
+
+            </children>
+
+        </VBox>
+
+    </children>
+
+</AnchorPane>

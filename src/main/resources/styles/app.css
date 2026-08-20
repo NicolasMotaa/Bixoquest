@@ -1,0 +1,295 @@
+.botao-pixel {
+    -fx-background-color: transparent;
+    -fx-background-image: url("/bgimages/botao-menu.png");
+    -fx-background-size: 100% 100%;
+    -fx-background-repeat: no-repeat;
+    -fx-text-fill: #f0d080;
+    -fx-font-family: "Press Start 2P";
+    -fx-font-size: 10px;
+    -fx-border-width: 0;
+    -fx-padding: 12 16 12 16;
+}
+
+.botao-pixel:hover {
+    -fx-background-image: url("/bgimages/botao-menu-hover.png");
+}
+
+.botao-pixel:pressed {
+    -fx-effect: innershadow(gaussian, rgba(0,0,0,0.6), 8, 0.5, 0, 0);
+}
+
+.botao-pixel-menu {
+    -fx-background-color: transparent;
+    -fx-background-image: url("/bgimages/botao-menu.png");
+    -fx-background-size: 100% 100%;
+    -fx-background-repeat: no-repeat;
+    -fx-text-fill: #f0d080;
+    -fx-font-family: "Press Start 2P";
+    -fx-font-size: 14px;
+    -fx-border-width: 0;
+    -fx-padding: 12 16 12 16;
+}
+
+.botao-pixel-menu:hover {
+    -fx-background-image: url("/bgimages/botao-menu-hover.png");
+}
+
+.botao-pixel-menu:pressed {
+    -fx-effect: innershadow(gaussian, rgba(0,0,0,0.6), 8, 0.5, 0, 0);
+}
+
+.save-label {
+
+    -fx-text-fill: white;
+
+    -fx-font-size: 16px;
+
+    -fx-font-weight: bold;
+
+    -fx-font-family: "Courier New";
+
+    -fx-effect: dropshadow(
+        gaussian,
+        black,
+        5,
+        0.8,
+        2,
+        2
+    );
+}
+.save-label-dinheiro {
+
+    -fx-text-fill: yellow;
+
+    -fx-font-size: 16px;
+
+    -fx-font-weight: bold;
+
+    -fx-font-family: "Courier New";
+
+    -fx-effect: dropshadow(
+        gaussian,
+        black,
+        5,
+        0.8,
+        2,
+        2
+    );
+}
+
+
+.card-save {
+
+    -fx-background-color: rgba(0,0,0,0.55);
+
+    -fx-background-radius: 12;
+
+    -fx-border-color: #8b5cf6;
+
+    -fx-border-width: 2;
+
+    -fx-border-radius: 12;
+
+}
+
+.botao-biblioteca {
+    -fx-background-color: transparent;
+    -fx-background-image: url("/bgimages/botao-biblioteca.png");
+    -fx-background-size: 100% 100%;
+    -fx-background-repeat: no-repeat;
+    -fx-text-fill: #f0d080;
+    -fx-font-family: "Press Start 2P";
+    -fx-font-size: 10px;
+    -fx-border-width: 0;
+    -fx-padding: 12 16 12 16;
+}
+
+.botao-biblioteca:hover {
+    -fx-background-image: url("/bgimages/botao-biblioteca.png");
+}
+
+.botao-biblioteca:pressed {
+    -fx-effect: innershadow(gaussian, rgba(0,0,0,0.6), 8, 0.5, 0, 0);
+}
+
+.botao-cantina {
+    -fx-background-color: transparent;
+    -fx-background-image: url("/bgimages/botao-cantina.png");
+    -fx-background-size: 100% 100%;
+    -fx-background-repeat: no-repeat;
+    -fx-text-fill: #f0d080;
+    -fx-font-family: "Press Start 2P";
+    -fx-font-size: 10px;
+    -fx-border-width: 0;
+    -fx-padding: 12 16 12 16;
+}
+
+.botao-cantina:hover {
+    -fx-background-image: url("/bgimages/botao-cantina.png");
+}
+
+.botao-cantina:pressed {
+    -fx-effect: innershadow(gaussian, rgba(0,0,0,0.6), 8, 0.5, 0, 0);
+}
+
+.botao-lab {
+    -fx-background-color: transparent;
+    -fx-background-image: url("/bgimages/botao-lab.png");
+    -fx-background-size: 100% 100%;
+    -fx-background-repeat: no-repeat;
+    -fx-text-fill: #f0d080;
+    -fx-font-family: "Press Start 2P";
+    -fx-font-size: 10px;
+    -fx-border-width: 0;
+    -fx-padding: 12 16 12 16;
+}
+
+.botao-lab:hover {
+    -fx-background-image: url("/bgimages/botao-lab.png");
+}
+
+.botao-lab:pressed {
+    -fx-effect: innershadow(gaussian, rgba(0,0,0,0.6), 8, 0.5, 0, 0);
+}
+
+.botao-sala {
+    -fx-background-color: transparent;
+    -fx-background-image: url("/bgimages/botao-sala.png");
+    -fx-background-size: 100% 100%;
+    -fx-background-repeat: no-repeat;
+    -fx-text-fill: #f0d080;
+    -fx-font-family: "Press Start 2P";
+    -fx-font-size: 10px;
+    -fx-border-width: 0;
+    -fx-padding: 12 16 12 16;
+}
+
+.botao-sala:hover {
+    -fx-background-image: url("/bgimages/botao-sala.png");
+}
+
+.botao-sala:pressed {
+    -fx-effect: innershadow(gaussian, rgba(0,0,0,0.6), 8, 0.5, 0, 0);
+}
+.botao-ponto {
+    -fx-background-color: transparent;
+    -fx-background-image: url("/bgimages/botao-ponto.png");
+    -fx-background-size: 100% 100%;
+    -fx-background-repeat: no-repeat;
+    -fx-text-fill: #f0d080;
+    -fx-font-family: "Press Start 2P";
+    -fx-font-size: 10px;
+    -fx-border-width: 0;
+    -fx-padding: 12 16 12 16;
+}
+
+.botao-ponto:hover {
+    -fx-background-image: url("/bgimages/botao-ponto.png");
+}
+
+.botao-ponto:pressed {
+    -fx-effect: innershadow(gaussian, rgba(0,0,0,0.6), 8, 0.5, 0, 0);
+}
+.botao-colegiado {
+    -fx-background-color: transparent;
+    -fx-background-image: url("/bgimages/botao-colegiado.png");
+    -fx-background-size: 100% 100%;
+    -fx-background-repeat: no-repeat;
+    -fx-text-fill: #f0d080;
+    -fx-font-family: "Press Start 2P";
+    -fx-font-size: 10px;
+    -fx-border-width: 0;
+    -fx-padding: 12 16 12 16;
+}
+
+.botao-colegiado:hover {
+    -fx-background-image: url("/bgimages/botao-colegiado.png");
+}
+
+.botao-colegiado:pressed {
+    -fx-effect: innershadow(gaussian, rgba(0,0,0,0.6), 8, 0.5, 0, 0);
+}
+
+.botao-praca {
+    -fx-background-color: transparent;
+    -fx-background-image: url("/bgimages/botao-praca.png");
+    -fx-background-size: 100% 100%;
+    -fx-background-repeat: no-repeat;
+    -fx-text-fill: #f0d080;
+    -fx-font-family: "Press Start 2P";
+    -fx-font-size: 10px;
+    -fx-border-width: 0;
+    -fx-padding: 12 16 12 16;
+}
+
+.botao-praca:hover {
+    -fx-background-image: url("/bgimages/botao-praca.png");
+}
+
+.botao-praca:pressed {
+    -fx-effect: innershadow(gaussian, rgba(0,0,0,0.6), 8, 0.5, 0, 0);
+}
+
+.botao-hud-mapa {
+    -fx-background-color: transparent;
+    -fx-background-image: url("/bgimages/icone-mapa.png");
+    -fx-background-size: 100% 100%;
+    -fx-background-repeat: no-repeat;
+    -fx-text-fill: #f0d080;
+    -fx-font-family: "Press Start 2P";
+    -fx-font-size: 10px;
+    -fx-border-width: 0;
+    -fx-padding: 12 16 12 16;
+}
+
+.botao-hud-mapa:pressed {
+    -fx-effect: innershadow(gaussian, rgba(0,0,0,0.6), 8, 0.5, 0, 0);
+}
+
+.botao-hud-stats {
+    -fx-background-color: transparent;
+    -fx-background-image: url("/bgimages/icone-stats.png");
+    -fx-background-size: 100% 100%;
+    -fx-background-repeat: no-repeat;
+    -fx-text-fill: #f0d080;
+    -fx-font-family: "Press Start 2P";
+    -fx-font-size: 10px;
+    -fx-border-width: 0;
+    -fx-padding: 12 16 12 16;
+}
+
+.botao-hud-stats:pressed {
+    -fx-effect: innershadow(gaussian, rgba(0,0,0,0.6), 8, 0.5, 0, 0);
+}
+
+.botao-hud-config {
+-fx-background-color: transparent;
+    -fx-background-image: url("/bgimages/icone-config.png");
+    -fx-background-size: 100% 100%;
+    -fx-background-repeat: no-repeat;
+    -fx-text-fill: #f0d080;
+    -fx-font-family: "Press Start 2P";
+    -fx-font-size: 10px;
+    -fx-border-width: 0;
+    -fx-padding: 12 16 12 16;
+}
+
+.botao-hud-config:pressed {
+    -fx-effect: innershadow(gaussian, rgba(0,0,0,0.6), 8, 0.5, 0, 0);
+}
+
+.botao-caramelo {
+-fx-background-color: transparent;
+    -fx-background-image: url("/bgimages/caramelo.png");
+    -fx-background-size: 100% 100%;
+    -fx-background-repeat: no-repeat;
+    -fx-text-fill: #f0d080;
+    -fx-font-family: "Press Start 2P";
+    -fx-font-size: 10px;
+    -fx-border-width: 0;
+    -fx-padding: 12 16 12 16;
+}
+
+.botao-caramelo:pressed {
+    -fx-effect: innershadow(gaussian, rgba(0,0,0,0.6), 8, 0.5, 0, 0);
+}

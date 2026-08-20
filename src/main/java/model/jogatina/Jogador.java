@@ -1,0 +1,112 @@
+package model.jogatina;
+
+import model.entidades.Area;
+import model.locais.Local;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class Jogador implements Serializable {
+    private final String nome;
+    private int energia;
+    private int motivacao;
+    private int saude;
+    private int dinheiro;
+    private List<Disciplina> disciplinasAprovadas;
+    private List<Disciplina> disciplinasAtuais;
+    private Map<Disciplina, Integer> conhecimentos;
+    private  Local localizacao; //definir local inicial
+    private boolean isPresenteNaAula = false;
+
+    public Jogador(String nome, Local localizacao) {
+        this.nome = nome;
+        this.energia = 100;
+        this.motivacao = 100;
+        this.saude = 100;
+        this.dinheiro = 50;
+        this.disciplinasAprovadas = new ArrayList<>();
+        this.disciplinasAtuais = new ArrayList<>();
+        this.conhecimentos = new HashMap<>();
+        this.localizacao = localizacao;
+    }
+
+    public void alterarConhecimento(Disciplina disciplina, int valor) {
+        this.conhecimentos.merge(disciplina, valor, (valorAntigo, valorNovo) ->
+                Math.min(100, valorAntigo + valorNovo)
+        );
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void alterarEnergia(int valor) {
+        this.energia = Math.max(0, Math.min(100, this.energia + valor));
+    }
+
+    public void alterarMotivacao(int valor) {
+        this.motivacao = Math.max(0, Math.min(100, this.motivacao + valor));
+    }
+
+    public void alterarSaude(int valor) {
+        this.saude = Math.max(0, Math.min(100, this.saude + valor));
+    }
+
+    public void alterarDinheiro(int valor) {
+        this.dinheiro = Math.max(0, Math.min(50, this.dinheiro + valor));
+    }
+
+    public int getEnergia() {
+        return energia;
+    }
+
+    public int getMotivacao() {
+        return motivacao;
+    }
+
+    public int getSaude() {
+        return saude;
+    }
+
+    public int getDinheiro() {
+        return dinheiro;
+    }
+
+    public List<Disciplina> getDisciplinasAprovadas() {
+        return disciplinasAprovadas;
+    }
+
+    public List<Disciplina> getDisciplinasAtuais() {
+        return disciplinasAtuais;
+    }
+
+    public Disciplina getDisciplinaAtual(Area area) {
+        return disciplinasAtuais.stream()
+                .filter(d -> d.getArea() == area)
+                .findFirst()
+                .orElse(null);
+    }
+
+    public int getConhecimentoPorDisciplina(Disciplina disciplina){
+        return this.conhecimentos.get(disciplina);
+    }
+
+    public Local getLocalizacao() {
+        return localizacao;
+    }
+
+    public void setLocalizacao(Local localizacao) {
+        this.localizacao = localizacao;
+    }
+
+    public boolean isPresenteNaAula() {
+        return isPresenteNaAula;
+    }
+
+    public void setPresenteNaAula(boolean presenteNaAula) {
+        this.isPresenteNaAula = presenteNaAula;
+    }
+}

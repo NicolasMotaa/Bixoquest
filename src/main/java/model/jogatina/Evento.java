@@ -1,0 +1,33 @@
+package model.jogatina;
+
+import java.util.Random;
+
+public abstract class Evento {
+    private String nome;
+    private String descricao;
+    private double probabilidade;
+    private boolean isAplicado;
+
+    public Evento(String nome, String descricao, double probabilidade) {
+        this.nome = nome;
+        this.descricao = descricao;
+        this.probabilidade = probabilidade;
+    }
+
+    public boolean calcularSeOcorre(){
+        Random random = new Random();
+        return random.nextDouble() < this.probabilidade;
+    }
+
+    public boolean isAplicado() {
+        return isAplicado;
+    }
+
+    @Override
+    public String toString() {
+        return "Evento{" +
+                "nome='" + nome + '\'' +
+                ", descricao='" + descricao + '\'' +
+                '}';
+    }
+}

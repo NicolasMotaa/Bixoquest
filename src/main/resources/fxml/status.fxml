@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="768.0" style="-fx-background-color: black;" stylesheets="@../styles/app.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.viewcontrollers.StatusController">
+
+    <children>
+
+        <!-- Fundo -->
+        <ImageView fitHeight="359.0" fitWidth="722.0" layoutX="23.0" layoutY="109.0" pickOnBounds="true" AnchorPane.bottomAnchor="108.0" AnchorPane.leftAnchor="23.0" AnchorPane.rightAnchor="23.0" AnchorPane.topAnchor="108.0">
+
+            <image>
+                <Image url="@../bgimages/bg-status.png" />
+            </image>
+
+        </ImageView>
+
+        <!-- HUD -->
+        <fx:include layoutX="284.0" layoutY="417.0" source="HUD.fxml" />
+
+        <!-- Nome do jogador -->
+        <Label fx:id="lblJogador" layoutX="50.0" layoutY="125.0" styleClass="save-label" text="Nome do Jogador" />
+
+        <!-- Tempo -->
+        <Label fx:id="lblTempo" layoutX="50.0" layoutY="150.0" styleClass="save-label" text="Semestre 1 • Semana 1 • Dia 1" />
+
+        <!-- Painel Status -->
+        <VBox layoutX="50.0" layoutY="195.0" spacing="12.0">
+
+            <children>
+
+                <Label styleClass="save-label" text="STATUS" />
+
+                <GridPane hgap="6.0" prefHeight="111.0" prefWidth="362.0" vgap="10.0">
+
+                    <columnConstraints>
+                        <ColumnConstraints prefWidth="95.0" />
+                        <ColumnConstraints prefWidth="170.0" />
+                        <ColumnConstraints prefWidth="60.0" />
+                    </columnConstraints>
+
+                    <children>
+
+                        <!-- Energia -->
+                        <Label styleClass="save-label" text="Energia" GridPane.rowIndex="0" />
+
+                        <ProgressBar fx:id="pbEnergia" prefWidth="160.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                        <Label fx:id="lblEnergiaValor" styleClass="save-label" text="75/100" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+
+                        <!-- Motivação -->
+                        <Label styleClass="save-label" text="Motivação" GridPane.rowIndex="1" />
+
+                        <ProgressBar fx:id="pbMotivacao" prefWidth="160.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                        <Label fx:id="lblMotivacaoValor" styleClass="save-label" text="80/100" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+
+                        <!-- Saúde -->
+                        <Label styleClass="save-label" text="Saúde" GridPane.rowIndex="2" />
+
+                        <ProgressBar fx:id="pbSaude" prefWidth="160.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                        <Label fx:id="lblSaudeValor" styleClass="save-label" text="90/100" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+
+                        <!-- Dinheiro -->
+                        <Label styleClass="save-label" text="Dinheiro" GridPane.rowIndex="3" />
+
+                        <Label fx:id="lblDinheiro" styleClass="save-label-dinheiro" text="R$ 0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                    </children>
+                    <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                    </rowConstraints>
+
+                </GridPane>
+
+            </children>
+
+        </VBox>
+
+        <!-- Painel Conhecimentos -->
+        <VBox layoutX="407.0" layoutY="195.0" prefHeight="142.0" prefWidth="348.0" spacing="12.0">
+
+            <children>
+
+                <Label styleClass="save-label" text="CONHECIMENTOS E FALTAS" />
+
+                <GridPane hgap="9.0" vgap="25.0">
+
+                    <columnConstraints>
+                        <ColumnConstraints maxWidth="177.60003662109375" minWidth="124.79998779296875" prefWidth="177.60003662109375" />
+                        <ColumnConstraints maxWidth="158.40000000000003" minWidth="95.99996337890622" prefWidth="95.99996337890622" />
+                        <ColumnConstraints maxWidth="57.5999755859375" minWidth="52.0" prefWidth="57.5999755859375" />
+                    </columnConstraints>
+
+                    <children>
+
+                        <!-- Disciplina 1 -->
+                        <Label fx:id="lblDisciplina1" prefWidth="116.0" styleClass="save-label" text="Disciplina 1" GridPane.rowIndex="0" />
+
+                        <ProgressBar fx:id="pbConhecimento1" prefWidth="140.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                        <Label fx:id="lblConhecimento1Valor" styleClass="save-label" text="0/100" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+
+                        <!-- Disciplina 2 -->
+                        <Label fx:id="lblDisciplina2" styleClass="save-label" text="Disciplina 2" GridPane.rowIndex="1" />
+
+                        <ProgressBar fx:id="pbConhecimento2" prefWidth="140.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                        <Label fx:id="lblConhecimento2Valor" styleClass="save-label" text="0/100" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+
+                        <!-- Disciplina 3 -->
+                        <Label fx:id="lblDisciplina3" styleClass="save-label" text="Disciplina 3" GridPane.rowIndex="2" />
+
+                        <ProgressBar fx:id="pbConhecimento3" prefWidth="140.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                        <Label fx:id="lblConhecimento3Valor" styleClass="save-label" text="0/100" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+
+                    </children>
+                    <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                    </rowConstraints>
+
+                </GridPane>
+
+            </children>
+
+        </VBox>
+
+    </children>
+
+</AnchorPane>
